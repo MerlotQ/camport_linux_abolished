@@ -4,7 +4,7 @@
 
 This is a basic template for the users.
 
-This directory implements a samll opencv based application. It gets depth or IR-grey data from the PERCIPIO's depth camera and shows it in windows.
+This directory implements a samll opencv2.4 based application. It gets depth or IR-grey data from the PERCIPIO's depth camera and shows it in windows.
 
 ## Code Structure ##
 
@@ -30,10 +30,10 @@ percipio_camport_internal.h: .
 
 ## Compiling the Code ##
 
-First install the opencv releated package and the libusb (apt-get install libusb),
+First install the opencv2.4 releated package and the libusb (apt-get install libusb),
 
 second, copy the libcamm.so to /usr/lib directory, and excute ldconfig to creates the necessary links and cache to the shared library.
 
 run the make command to start compiling,
 
-run ./cam_test to show the xyz secret, enjoy it!
+run sudo ./cam_test to show the xyz secret, enjoy it!
