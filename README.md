@@ -22,9 +22,7 @@ percipio_opencv_camport.h: .
 
 The include directory includes the relevant headers needed to call the dynamic library functions.
 
-percipio_camport.h: .
-
-percipio_camport_internal.h: .
+percipio_camport.h: introduce the data structure and api
 
 ## Usage ##
 
