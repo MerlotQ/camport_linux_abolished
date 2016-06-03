@@ -10,7 +10,7 @@
 #include <sys/time.h>
 #endif
 
-#include "percipio_opencv_camport.h"
+#include "percipio_camport.h"
 #include <opencv2/opencv.hpp>
 #include <stdlib.h>
 #include "depth_render.h"
@@ -21,7 +21,7 @@ static int fps_counter = 0;
 static clock_t fps_tm = 0;
 
 
-void process_frames(percipio::OCVCamPort &port);
+void process_frames(percipio::DepthCameraDevice &port);
 void save_frame_to_file();
 int get_fps();
 void CopyBuffer(percipio::ImageBuffer *pbuf, cv::Mat &img);
@@ -33,7 +33,7 @@ void frame_arrived_callback(void *user_data) {
 }
 
 int main(int argc, char** argv) {
-  percipio::OCVCamPort port(percipio::PROTO_01GN04);
+  percipio::DepthCameraDevice port(percipio::PROTO_01GN04);
   render.range_mode = DepthRender::COLOR_RANGE_DYNAMIC;
   render.color_type = DepthRender::COLORTYPE_BLUERED;
   render.invalid_label = 0;
@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
   percipio::SetLogLevel(percipio::LOG_LEVEL_INFO);
   port.SetCallbackUserData(NULL);
   port.SetFrameReadyCallback(frame_arrived_callback);
-  
+
   int ver = percipio::LibVersion();
   printf("Sdk version is %d\n", ver);
 
@@ -94,7 +94,7 @@ int main(int argc, char** argv) {
   return 0;
 }
 
-void process_frames(percipio::OCVCamPort &port) {
+void process_frames(percipio::DepthCameraDevice &port) {
   percipio::ImageBuffer pimage;
   auto ret = port.FrameGet(percipio::CAMDATA_LEFT, &pimage);
   if (percipio::CAMSTATUS_SUCCESS == ret) {
@@ -144,10 +144,10 @@ int get_fps() {
   }
 
   gettimeofday(&start, NULL);
-  auto elapse = start.tv_sec*1000 + start.tv_usec/1000 - fps_tm;
+  auto elapse = start.tv_sec * 1000 + start.tv_usec / 1000 - fps_tm;
   int v = (int)(((float)fps_counter) / elapse * 1000);
   gettimeofday(&start, NULL);
-  fps_tm = start.tv_sec*1000 + start.tv_usec/1000;
+  fps_tm = start.tv_sec * 1000 + start.tv_usec / 1000;
 
   fps_counter = 0;
   return v;
@@ -185,23 +185,23 @@ void save_frame_to_file() {
 }
 
 void CopyBuffer(percipio::ImageBuffer *pbuf, cv::Mat &img) {
-    switch (pbuf->type) {
-        case percipio::ImageBuffer::PIX_8C1:
-          img.create(pbuf->height, pbuf->width, CV_8UC1);
-          break;
-        case percipio::ImageBuffer::PIX_16C1:
-          img.create(pbuf->height, pbuf->width, CV_16UC1);
-          break;
-        case percipio::ImageBuffer::PIX_8C3:
-          img.create(pbuf->height, pbuf->width, CV_8UC3);
-          break;
-        case percipio::ImageBuffer::PIX_32FC3:
-          img.create(pbuf->height, pbuf->width, CV_32FC3);
-          break;
-        default:
-          img.release();
-        
-        return;
-    }
-        memcpy(img.data, pbuf->data, pbuf->width * pbuf->height * pbuf->get_pixel_size());
+  switch (pbuf->type) {
+  case percipio::ImageBuffer::PIX_8C1:
+    img.create(pbuf->height, pbuf->width, CV_8UC1);
+    break;
+  case percipio::ImageBuffer::PIX_16C1:
+    img.create(pbuf->height, pbuf->width, CV_16UC1);
+    break;
+  case percipio::ImageBuffer::PIX_8C3:
+    img.create(pbuf->height, pbuf->width, CV_8UC3);
+    break;
+  case percipio::ImageBuffer::PIX_32FC3:
+    img.create(pbuf->height, pbuf->width, CV_32FC3);
+    break;
+  default:
+    img.release();
+
+    return;
+  }
+  memcpy(img.data, pbuf->data, pbuf->width * pbuf->height * pbuf->get_pixel_size());
 }
