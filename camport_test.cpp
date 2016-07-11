@@ -27,13 +27,13 @@ int get_fps();
 void CopyBuffer(percipio::ImageBuffer *pbuf, cv::Mat &img);
 
 void frame_arrived_callback(void *user_data) {
-  //1. call port.NextFrame to refresh new frame buffer here
-  //2. call port.GetFrame to get frame data here
+  // call port.FramePackageGet to update internal buffer
+  // call port.FrameGet to get frame data here
   // To avoid performance problem ,time consuming task in callback function is not recommended.
 }
 
 int main(int argc, char** argv) {
-  percipio::DepthCameraDevice port(percipio::PROTO_01GN04);
+  percipio::DepthCameraDevice port(percipio::MODEL_DPB04GN);
   render.range_mode = DepthRender::COLOR_RANGE_DYNAMIC;
   render.color_type = DepthRender::COLORTYPE_BLUERED;
   render.invalid_label = 0;
@@ -60,12 +60,6 @@ int main(int argc, char** argv) {
   //int reti = port.SetProperty_Int(percipio::PROP_WORKMODE, percipio::WORKMODE_IR_DEPTH);
   if (reti < 0) {
     printf("set mode failed,error code:%d\n", reti);
-    return -1;
-  }
-
-  ret = port.SetProperty_Int(percipio::PROP_LASER_POW, 0);
-  if (ret < 0) {
-    printf("set laser failed, error code:%d\n", ret);
     return -1;
   }
 
@@ -118,7 +112,7 @@ void process_frames(percipio::DepthCameraDevice &port) {
       printf("fps:%d distance: %d\n", (int)fps, v);
     }
   }
-  ret = port.GetFrame(percipio::CAMDATA_POINT3D, &pimage);
+  ret = port.FrameGet(percipio::CAMDATA_POINT3D, &pimage);
 }
 #ifdef _WIN32
 int get_fps() {
