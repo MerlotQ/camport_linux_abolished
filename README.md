@@ -26,7 +26,7 @@ percipio_camport.h: introduce the data structure and api
 
 ## Compiling the Code ##
 
-First install the opencv2.4.8 releated package and the libusb packages,
+First install the Libusb, Libpoco and the Opencv2.4.8 releated packages,
 
 second, copy the libcamm.so for target platform to /usr/lib directory, and excute ldconfig to creates the necessary links and cache to the shared library.
 
