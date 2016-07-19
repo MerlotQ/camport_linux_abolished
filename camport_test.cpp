@@ -32,6 +32,7 @@ void frame_arrived_callback(void *user_data) {
   // To avoid performance problem ,time consuming task in callback function is not recommended.
 }
 
+
 int main(int argc, char** argv) {
   percipio::DepthCameraDevice port(percipio::MODEL_DPB04GN);
   render.range_mode = DepthRender::COLOR_RANGE_DYNAMIC;
@@ -71,7 +72,7 @@ int main(int argc, char** argv) {
     if (port.FramePackageGet() == percipio::CAMSTATUS_SUCCESS) {
       process_frames(port);
     }
-    auto k = cv::waitKey(1);
+    int k = cv::waitKey(1);
     if (k == 'q' || k == 1048689) {
       break;
     }
@@ -90,7 +91,7 @@ int main(int argc, char** argv) {
 
 void process_frames(percipio::DepthCameraDevice &port) {
   percipio::ImageBuffer pimage;
-  auto ret = port.FrameGet(percipio::CAMDATA_LEFT, &pimage);
+  int ret = port.FrameGet(percipio::CAMDATA_LEFT, &pimage);
   if (percipio::CAMSTATUS_SUCCESS == ret) {
     CopyBuffer(&pimage, left);
     cv::imshow("left", left);
@@ -108,11 +109,14 @@ void process_frames(percipio::DepthCameraDevice &port) {
     render.Compute(depth, t);
     cv::imshow("depth", t);
     if (fps > 0) {
-      auto v = depth.ptr<unsigned short>(depth.rows / 2)[depth.cols / 2];
+      unsigned short v = depth.ptr<unsigned short>(depth.rows / 2)[depth.cols / 2];
       printf("fps:%d distance: %d\n", (int)fps, v);
     }
   }
   ret = port.FrameGet(percipio::CAMDATA_POINT3D, &pimage);
+  if (percipio::CAMSTATUS_SUCCESS == ret) {
+    CopyBuffer(&pimage, point_cloud);
+  }
 }
 #ifdef _WIN32
 int get_fps() {
@@ -121,7 +125,7 @@ int get_fps() {
   if (fps_counter < kMaxCounter) {
     return -1;
   }
-  auto elapse = (clock() - fps_tm);
+  int elapse = (clock() - fps_tm);
   int v = (int)(((float)fps_counter) / elapse * CLOCKS_PER_SEC);
   fps_tm = clock();
 
@@ -138,7 +142,7 @@ int get_fps() {
   }
 
   gettimeofday(&start, NULL);
-  auto elapse = start.tv_sec * 1000 + start.tv_usec / 1000 - fps_tm;
+  int elapse = start.tv_sec * 1000 + start.tv_usec / 1000 - fps_tm;
   int v = (int)(((float)fps_counter) / elapse * 1000);
   gettimeofday(&start, NULL);
   fps_tm = start.tv_sec * 1000 + start.tv_usec / 1000;
@@ -168,7 +172,7 @@ void save_frame_to_file() {
   if (!point_cloud.empty()) {
     sprintf(buff, "%d-points.txt", idx);
     std::ofstream ofs(buff);
-    auto ptr = point_cloud.ptr<percipio::Vect3f>();
+    percipio::Vect3f *ptr = point_cloud.ptr<percipio::Vect3f>();
     for (int i = 0; i < point_cloud.size().area(); i++) {
       ofs << ptr->x << "," << ptr->y << "," << ptr->z << std::endl;
       ptr++;

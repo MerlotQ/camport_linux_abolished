@@ -5,7 +5,7 @@ CC  	:= $(CROSS_COMPILE)gcc
 
 SYS	:= $(shell $(CC) -dumpmachine)
 
-COMMON_CFLAGS := -g -O2 -Wall -std=gnu++11
+COMMON_CFLAGS := -g -O2 -Wall
 
 CFLAGS	:= $(COMMON_CFLAGS) -fPIC
 CFLAGS	+= -I$(CURDIR)/include

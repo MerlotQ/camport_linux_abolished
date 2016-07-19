@@ -11,7 +11,6 @@
 
 #ifndef PERCIPIO_CAMPORT_H_
 #define PERCIPIO_CAMPORT_H_
-#include <cstdint>
 #include <cassert>
 #include <fstream>
 
@@ -30,6 +29,13 @@
 #endif
 
 #define PERCIPIO_CAMPORT_LIB_BUILD_VERSION 2
+
+typedef unsigned char           uint8_t;
+typedef unsigned short          uint16_t;
+typedef unsigned int            uint32_t;
+typedef signed char             int8_t;
+typedef short                   int16_t;
+typedef int                     int32_t;
 
 /**
  * @brief namespace used by sdk of percipio depth camera
@@ -195,6 +201,7 @@ enum DeviceProperties {
   PROP_SPECKLE_FILTER,          /**< parameter of speckle filter*/
   PROP_UNDISTORT_IR,            /**< IR image undistortion , bool type , true to enable false to disable*/
   PROP_COORDINATE_MAP,          /**< get coordinate mapper*/
+  PROP_TRIGGER_MODE,            /**< trigger mode */
 };
 
 /**
@@ -311,7 +318,17 @@ class ICoordinateMapper {
  public:
   virtual ~ICoordinateMapper() {}
   virtual const CamIntristic* get_depth_intristics() = 0;
+  /**
+  * convert point on depth image to world coordinate
+  *@param[in] depth_position  depth image position .
+  *@param[out]   world_position point cloud.
+  */
   virtual int DepthToWorld(const Vect3f *depth_position, Vect3f *world_position) = 0;
+  /**
+  * convert depth map to cloud points
+  *@param[in] depth  depth map .Buffer type should be PIX_16C1.
+  *@param[out] cloud  point cloud .buffer type is PIX_32FC3.
+  */
   virtual int DepthToWorld(const ImageBuffer *depth, ImageBuffer *cloud) = 0;
   virtual int WorldToDepth(const Vect3f *world_position, Vect3f *depth_position) = 0;
 };
@@ -326,7 +343,9 @@ class ICameraVideoSource {
   virtual int GetPropertyNum() = 0;
   virtual int GetDeviceList(int *devs) = 0;
   virtual int GetPropertyList(DeviceProperty *device_prop) = 0;
+  //trigger device to get a frame sync
   virtual CameraSourceStatus FrameGetSync() = 0;
+  //trigger device to get a frame async
   virtual CameraSourceStatus FrameGetAsync() = 0;
   virtual CameraSourceStatus FrameGet(int cam_data_type, ImageBuffer *buff1) = 0;
   virtual CameraSourceStatus FramePackageGet() = 0;
@@ -455,7 +474,7 @@ class DepthCameraDevice {
   /**
    * @brief retrieve on frame from internal buffer which updated by FramePackageGet().
    *
-   * @note Frame data in current buffer won't be modified until FramePackageGet 
+   * @note Frame data in current buffer won't be modified until FramePackageGet
    * @param cam_id is the frame data type which descriped by emnu CameraFrameDataTypes.
    * @param buff is a ImageBuffer buffer which used to save frame data.
    * @see enum CameraFrameDataTypes.
@@ -587,7 +606,7 @@ class DepthCameraDevice {
    * @brief set laser power, equal to SetProperty_Bool(PROP_LASER_POW, ...).
    * @param duty bright of laser .
            - 100 full power.
-           - 0   off  
+           - 0   off
    */
   int SetLaser(unsigned char duty) {
     return get_source()->SetProperty(PROP_LASER_POW, (char*)&duty, sizeof(duty));

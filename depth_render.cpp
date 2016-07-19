@@ -6,7 +6,7 @@ namespace {
 void HistAdjustRange(cv::Mat &dist, short invalid, int min_display_distance_range, short &min_val, short &max_val) {
   std::map<short, int> hist;
   int sz = dist.size().area();
-  auto ptr = dist.ptr < short>();
+  short *ptr = dist.ptr < short>();
   int total_num = 0;
   for (int idx = sz; idx != 0; idx--, ptr++) {
     if (invalid == *ptr) {
@@ -16,7 +16,8 @@ void HistAdjustRange(cv::Mat &dist, short invalid, int min_display_distance_rang
     if (hist.find(*ptr) != hist.end()) {
       hist[*ptr]++;
     } else {
-      hist.emplace((std::make_pair(*ptr, 1)));
+      //hist.emplace((std::make_pair(*ptr, 1)));
+      hist.insert((std::make_pair(*ptr, 1)));
     }
   }
   if (hist.empty()) {
@@ -63,7 +64,7 @@ void DepthRender::BuildColorTable() {
   cv::Scalar from(0, 0, 0xff), to(0, 200, 255);
   for (int i = 0; i < 128; i++) {
     float a = (float)i / 128;
-    auto &v = _color_lookup_table[i];
+    cv::Scalar &v = _color_lookup_table[i];
     for (int j = 0; j < 3; j++) {
       v.val[j] = from.val[j] * (1 - a) + to.val[j] * a;
     }
@@ -72,7 +73,7 @@ void DepthRender::BuildColorTable() {
   to = cv::Scalar(255, 104, 0);
   for (int i = 128; i < 256; i++) {
     float a = (float)(i - 128) / 128;
-    auto &v = _color_lookup_table[i];
+    cv::Scalar &v = _color_lookup_table[i];
     for (int j = 0; j < 3; j++) {
       v.val[j] = from.val[j] * (1 - a) + to.val[j] * a;
     }
@@ -90,10 +91,10 @@ void DepthRender::CalcColorMap(const cv::Mat &src, cv::Mat &dst) {
   assert(!src.empty());
   assert(src.type() == CV_8UC1);
   dst.create(src.size(), CV_8UC3);
-  auto sptr = src.ptr<unsigned char>();
-  auto dptr = dst.ptr<unsigned char>();
+  const unsigned char *sptr = src.ptr<unsigned char>();
+  unsigned char *dptr = dst.ptr<unsigned char>();
   for (int i = src.size().area(); i != 0; i--) {
-    auto &v = table[*sptr];
+    cv::Scalar &v = table[*sptr];
     dptr[0] = (unsigned char)v.val[0];
     dptr[1] = (unsigned char)v.val[1];
     dptr[2] = (unsigned char)v.val[2];
@@ -106,10 +107,9 @@ void DepthRender::TruncValue(cv::Mat &img, cv::Mat &mask, short min_val, short m
   assert(max_val >= min_val);
   assert(img.type() == CV_16SC1);
   assert(mask.type() == CV_8UC1);
-  auto ptr = img.ptr<short>();
-  auto mask_ptr = mask.ptr<unsigned char>();
+  short *ptr = img.ptr<short>();
+  unsigned char *mask_ptr = mask.ptr<unsigned char>();
   for (int i = img.size().area(); i != 0; i--) {
-    auto v = *ptr;
     if (*ptr > max_val) {
       *ptr = max_val;
       *mask_ptr = 0xff;
@@ -126,9 +126,9 @@ void DepthRender::ClearInvalidArea(cv::Mat &clr_disp, cv::Mat &filtered_mask) {
   assert(clr_disp.type() == CV_8UC3);
   assert(filtered_mask.type() == CV_8UC1);
   assert(clr_disp.size().area() == filtered_mask.size().area());
-  auto filter_ptr = filtered_mask.ptr<unsigned char>();
-  auto ptr = clr_disp.ptr<unsigned char>();
-  auto len = clr_disp.size().area();
+  unsigned char *filter_ptr = filtered_mask.ptr<unsigned char>();
+  unsigned char *ptr = clr_disp.ptr<unsigned char>();
+  int len = clr_disp.size().area();
   for (int i = 0; i < len; i++) {
     if (*filter_ptr != 0) {
       ptr[0] = ptr[1] = ptr[2] = 0;
