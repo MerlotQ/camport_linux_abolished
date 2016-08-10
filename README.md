@@ -33,3 +33,6 @@ second, copy the libcamm.so for target platform to /usr/lib directory, and excut
 run the make command to start compiling,
 
 run sudo ./cam_test to show the xyz secret, enjoy it!
+
+
+Bear in mind that you may want to CROSS COMPILE the libusb and opencv source code first and then cross compile this demo code for your EMBEDDED platform.
