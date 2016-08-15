@@ -25,6 +25,13 @@
     <UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="percipio"><param name="Local" value="namespacepercipio.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CamGainCtrlParam"><param name="Local" value="structpercipio_1_1CamGainCtrlParam.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="CamGainCtrlParam"><param name="Local" value="structpercipio_1_1CamGainCtrlParam.html#aabd0f45c1e58764d89ba010db2e25c4d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="CamGainCtrlParam"><param name="Local" value="structpercipio_1_1CamGainCtrlParam.html#a42064b93827f2ae7467f3921cb1af479"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="cam_id"><param name="Local" value="structpercipio_1_1CamGainCtrlParam.html#ab61ad4b9c929d2d075ae8d1f686a25bc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="gain"><param name="Local" value="structpercipio_1_1CamGainCtrlParam.html#ac7db6b862f629b6112ef3456a1254a65"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="CamIntristic"><param name="Local" value="structpercipio_1_1CamIntristic.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="data"><param name="Local" value="structpercipio_1_1CamIntristic.html#a616c14b940da74e98816af84d09428f8"><param name="ImageNumber" value="11"></OBJECT>
@@ -44,10 +51,11 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="CloseDevice"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#af4f5cbaa3a0a42d92146f1acae087e6b"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="Create"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#ad73661b828c0b4bbefa66f909cb695e7"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="FrameGet"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a9a4ea586eea99282a315b92a4d6378c1"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="FrameGetAsync"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#ab827e48f2faa708a9ca1edbb3c9306df"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="FrameGetSync"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a8906781a494baed837831cd51f2247ce"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="FramePackageGet"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#ac882991ccba7efeb3364adec56e95ab2"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="FramePackageGetAsync"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#abef05f9fd8f4b3424eedc14957323821"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="FramePackageGetSync"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a03ecc3a1c743cef2d445420663424569"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="get_source"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a7f6f3d2fd212921e3eefb3847500fefc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="GetCamGainControl"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#aabbb186dc79b73db6cf6b8eab324b76f"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetCoordinateMapper"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a766873a9052062282b1137b2190da894"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetDeviceList"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a0b23b75171ae2587ab0f38aaad47e2cd"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetDeviceNum"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a0e877483052151607169ca5c8dc2c689"><param name="ImageNumber" value="11"></OBJECT>
@@ -60,6 +68,7 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="OpenDevice"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#ab61d17d4c64827d6316caf19188059a9"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="OpenDevice"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a069ee4adb6bb978d1f20f874d30b9816"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetCallbackUserData"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a2091d9dcd5a1f0334f6e2ddab039751d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SetCamGainControl"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a2f0d7712bd3d6f7b03a8a659c0aa04ea"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetCmosRegister"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a4fed0115b92d49b50778a88a1719bbdf"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetDepthResolution"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#aa37fe18be2d95f570792d4345b293c24"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetFrameReadyCallback"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a8ac63b4d99a04c7c9a4c3e0671aa5b66"><param name="ImageNumber" value="11"></OBJECT>
@@ -68,7 +77,7 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetProperty_Bool"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a994844bb37f040ab66c1a3b6e8f6b310"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetProperty_Int"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a5f027fc66a6a3391e25161a5b51c7064"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetProperty_String"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#afa7f9e0084d3e285b55f1e19c2f49298"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="SetSpeckleFilter"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#ade4b1cae19b5f4610d53ae11393aca28"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SetSpeckleFilter"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#afb07bd7366d5f1d852806c9db622b3ff"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetWaitNextFrameTimeout"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a7f44ff9daa353764253b793331a1581b"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetWorkMode"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a321aa842158e6ab5426adacb0ed6e763"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
@@ -83,7 +92,8 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="DeviceProperty"><param name="Local" value="structpercipio_1_1DeviceProperty.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="name"><param name="Local" value="structpercipio_1_1DeviceProperty.html#a2cb5736783a601d56e4d58a33e922a3e"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="prop_id"><param name="Local" value="structpercipio_1_1DeviceProperty.html#a3494161cad9ca6ef10bce1d437f58dec"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="prop_id"><param name="Local" value="structpercipio_1_1DeviceProperty.html#af319f333be9e2a0da2d987caebbcb170"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="type"><param name="Local" value="structpercipio_1_1DeviceProperty.html#a1368ff7f3f307ced7f6b10da1b167583"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="ICameraVideoSource"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
@@ -91,17 +101,17 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="CloseDevice"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a9133de3462f9856ea28797f0be21eaa4"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="Config"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a023a521725a1198b59bb8cb7085f2c28"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="FrameGet"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#aac2032e52c71e77f078d25f216aa7848"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="FrameGetAsync"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#aafac2950d130b5cb581327b85545c941"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="FrameGetSync"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#af718b951ac6e41cd64c30013fb0d3d95"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="FramePackageGet"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a5f5bb835a7e6e887c06efd53ad64741d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="FramePackageGetAsync"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#aadf06e8b6c5336c331083351047e763a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="FramePackageGetSync"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#af392ca5f6f622a785f862ae3201f78fa"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetDeviceList"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a0c7e242adec93fbf96adc71ddcc4720a"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetDeviceNum"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a89bd7dee81de1c14df4538c3d4fb5d4e"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="GetProperty"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#af29197c5d9a7f2caae1e6cd1c3ff2400"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="GetProperty"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a6690afa585dbb080b34af4b2684e88c3"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetPropertyList"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a3707e49b15fa1849f631eeca6da55500"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetPropertyNum"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a569eea456a94b0b5ca48efd7cfb5f512"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="OpenDevice"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#abcc03d8f2daa7aaa0be8ddd1b418da54"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="OpenDevice"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a9cf5616796734aec26c5f2fbc249d0ae"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="SetProperty"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a839d8eb31f2b0270f36a85ca7a7f871d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SetProperty"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#aa83bf28619bb7601ef1581f4e19fe9be"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="ICoordinateMapper"><param name="Local" value="classpercipio_1_1ICoordinateMapper.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
@@ -195,6 +205,13 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="reg_addr"><param name="Local" value="structpercipio_1_1CmosCtrlParam.html#aea7f45f63ee9db6faa6e6d59cb589655"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="reg_value"><param name="Local" value="structpercipio_1_1CmosCtrlParam.html#a2c3f8edaaf25cdd51df4dfc740a57b58"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="CamGainCtrlParam"><param name="Local" value="structpercipio_1_1CamGainCtrlParam.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="CamGainCtrlParam"><param name="Local" value="structpercipio_1_1CamGainCtrlParam.html#aabd0f45c1e58764d89ba010db2e25c4d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="CamGainCtrlParam"><param name="Local" value="structpercipio_1_1CamGainCtrlParam.html#a42064b93827f2ae7467f3921cb1af479"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="cam_id"><param name="Local" value="structpercipio_1_1CamGainCtrlParam.html#ab61ad4b9c929d2d075ae8d1f686a25bc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="gain"><param name="Local" value="structpercipio_1_1CamGainCtrlParam.html#ac7db6b862f629b6112ef3456a1254a65"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="DeviceInfo"><param name="Local" value="structpercipio_1_1DeviceInfo.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="hardware_model"><param name="Local" value="structpercipio_1_1DeviceInfo.html#aa2dc552b9acc9c45f4a95ed5f4968f7d"><param name="ImageNumber" value="11"></OBJECT>
@@ -219,7 +236,8 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="DeviceProperty"><param name="Local" value="structpercipio_1_1DeviceProperty.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="name"><param name="Local" value="structpercipio_1_1DeviceProperty.html#a2cb5736783a601d56e4d58a33e922a3e"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="prop_id"><param name="Local" value="structpercipio_1_1DeviceProperty.html#a3494161cad9ca6ef10bce1d437f58dec"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="prop_id"><param name="Local" value="structpercipio_1_1DeviceProperty.html#af319f333be9e2a0da2d987caebbcb170"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="type"><param name="Local" value="structpercipio_1_1DeviceProperty.html#a1368ff7f3f307ced7f6b10da1b167583"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="ICoordinateMapper"><param name="Local" value="classpercipio_1_1ICoordinateMapper.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
@@ -235,17 +253,17 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="CloseDevice"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a9133de3462f9856ea28797f0be21eaa4"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="Config"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a023a521725a1198b59bb8cb7085f2c28"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="FrameGet"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#aac2032e52c71e77f078d25f216aa7848"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="FrameGetAsync"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#aafac2950d130b5cb581327b85545c941"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="FrameGetSync"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#af718b951ac6e41cd64c30013fb0d3d95"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="FramePackageGet"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a5f5bb835a7e6e887c06efd53ad64741d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="FramePackageGetAsync"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#aadf06e8b6c5336c331083351047e763a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="FramePackageGetSync"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#af392ca5f6f622a785f862ae3201f78fa"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetDeviceList"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a0c7e242adec93fbf96adc71ddcc4720a"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetDeviceNum"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a89bd7dee81de1c14df4538c3d4fb5d4e"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="GetProperty"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#af29197c5d9a7f2caae1e6cd1c3ff2400"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="GetProperty"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a6690afa585dbb080b34af4b2684e88c3"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetPropertyList"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a3707e49b15fa1849f631eeca6da55500"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetPropertyNum"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a569eea456a94b0b5ca48efd7cfb5f512"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="OpenDevice"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#abcc03d8f2daa7aaa0be8ddd1b418da54"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="OpenDevice"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a9cf5616796734aec26c5f2fbc249d0ae"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="SetProperty"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#a839d8eb31f2b0270f36a85ca7a7f871d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SetProperty"><param name="Local" value="classpercipio_1_1ICameraVideoSource.html#aa83bf28619bb7601ef1581f4e19fe9be"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="DepthCameraDevice"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
@@ -254,10 +272,11 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="CloseDevice"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#af4f5cbaa3a0a42d92146f1acae087e6b"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="Create"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#ad73661b828c0b4bbefa66f909cb695e7"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="FrameGet"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a9a4ea586eea99282a315b92a4d6378c1"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="FrameGetAsync"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#ab827e48f2faa708a9ca1edbb3c9306df"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="FrameGetSync"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a8906781a494baed837831cd51f2247ce"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="FramePackageGet"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#ac882991ccba7efeb3364adec56e95ab2"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="FramePackageGetAsync"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#abef05f9fd8f4b3424eedc14957323821"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="FramePackageGetSync"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a03ecc3a1c743cef2d445420663424569"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="get_source"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a7f6f3d2fd212921e3eefb3847500fefc"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="GetCamGainControl"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#aabbb186dc79b73db6cf6b8eab324b76f"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetCoordinateMapper"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a766873a9052062282b1137b2190da894"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetDeviceList"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a0b23b75171ae2587ab0f38aaad47e2cd"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="GetDeviceNum"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a0e877483052151607169ca5c8dc2c689"><param name="ImageNumber" value="11"></OBJECT>
@@ -270,6 +289,7 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="OpenDevice"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#ab61d17d4c64827d6316caf19188059a9"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="OpenDevice"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a069ee4adb6bb978d1f20f874d30b9816"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetCallbackUserData"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a2091d9dcd5a1f0334f6e2ddab039751d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SetCamGainControl"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a2f0d7712bd3d6f7b03a8a659c0aa04ea"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetCmosRegister"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a4fed0115b92d49b50778a88a1719bbdf"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetDepthResolution"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#aa37fe18be2d95f570792d4345b293c24"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetFrameReadyCallback"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a8ac63b4d99a04c7c9a4c3e0671aa5b66"><param name="ImageNumber" value="11"></OBJECT>
@@ -278,13 +298,19 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetProperty_Bool"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a994844bb37f040ab66c1a3b6e8f6b310"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetProperty_Int"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a5f027fc66a6a3391e25161a5b51c7064"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetProperty_String"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#afa7f9e0084d3e285b55f1e19c2f49298"><param name="ImageNumber" value="11"></OBJECT>
-        <LI><OBJECT type="text/sitemap"><param name="Name" value="SetSpeckleFilter"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#ade4b1cae19b5f4610d53ae11393aca28"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="SetSpeckleFilter"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#afb07bd7366d5f1d852806c9db622b3ff"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetWaitNextFrameTimeout"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a7f44ff9daa353764253b793331a1581b"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="SetWorkMode"><param name="Local" value="classpercipio_1_1DepthCameraDevice.html#a321aa842158e6ab5426adacb0ed6e763"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="PERCIPIO_API"><param name="Local" value="percipio__camport_8h.html#abf17385bb7564f3f093dd21a38af668f"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="PERCIPIO_CAMPORT_LIB_BUILD_VERSION"><param name="Local" value="percipio__camport_8h.html#a8b42de79368c519ad91be64c969adfb7"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EventCallbackFunc"><param name="Local" value="percipio__camport_8h.html#a9b59a415beff4118b2efc46fc2424c10"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="int16_t"><param name="Local" value="percipio__camport_8h.html#aa343fa3b3d06292b959ffdd4c4703b06"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="int32_t"><param name="Local" value="percipio__camport_8h.html#a32f2e37ee053cf2ce8ca28d1f74630e5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="int8_t"><param name="Local" value="percipio__camport_8h.html#aef44329758059c91c76d334e8fc09700"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="uint16_t"><param name="Local" value="percipio__camport_8h.html#a273cf69d639a59973b6019625df33e30"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="uint32_t"><param name="Local" value="percipio__camport_8h.html#a435d1572bf3f880d55459d9805097f62"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="uint8_t"><param name="Local" value="percipio__camport_8h.html#aba7bc1797add20fe3efdf37ced1182c5"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="CameraFrameDataTypes"><param name="Local" value="percipio__camport_8h.html#aa6da2c0f9c0bac18cfd43c2f30558a92"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="CAMDATA_LEFT"><param name="Local" value="percipio__camport_8h.html#aa6da2c0f9c0bac18cfd43c2f30558a92a253c21614e94dd5c2074783d95954121"><param name="ImageNumber" value="11"></OBJECT>
@@ -318,6 +344,8 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_SPECKLE_FILTER"><param name="Local" value="percipio__camport_8h.html#abf5a9eaf9a9b16e7c057c018e49e6662a1e8842194ace73bae9c5e23b7d200cbb"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_UNDISTORT_IR"><param name="Local" value="percipio__camport_8h.html#abf5a9eaf9a9b16e7c057c018e49e6662addc5c148e1b72429e64ec658850b2a63"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_COORDINATE_MAP"><param name="Local" value="percipio__camport_8h.html#abf5a9eaf9a9b16e7c057c018e49e6662ad5e22b738989287161ecd1a1a01e2017"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_TRIGGER_MODE"><param name="Local" value="percipio__camport_8h.html#abf5a9eaf9a9b16e7c057c018e49e6662a1414d1f43d2a91273f19984c673f228a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_AUTO_GAIN_CTRL"><param name="Local" value="percipio__camport_8h.html#abf5a9eaf9a9b16e7c057c018e49e6662adc2ced13371eb9fe96e8891febdee426"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="DeviceWorkModes"><param name="Local" value="percipio__camport_8h.html#a32368bb911e1573b80cfedc319671970"><param name="ImageNumber" value="1"></OBJECT>
         <UL>
@@ -341,6 +369,19 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="LOG_LEVEL_WARN"><param name="Local" value="percipio__camport_8h.html#a7de3f35d912bc844a3e17db068900e0dacb1b0d3226ea7b0048dd15c0ec79dbb8"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="LOG_LEVEL_ERROR"><param name="Local" value="percipio__camport_8h.html#a7de3f35d912bc844a3e17db068900e0da690da82a5d2dff8765d10e65faee0984"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="LOG_LEVEL_NONE"><param name="Local" value="percipio__camport_8h.html#a7de3f35d912bc844a3e17db068900e0da94f00dab0edf9084ce879697871160b7"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="PropertyDataTypes"><param name="Local" value="percipio__camport_8h.html#a3bd20f9ce80ffd1652a85be38ea59343"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_TYPE_INT8"><param name="Local" value="percipio__camport_8h.html#a3bd20f9ce80ffd1652a85be38ea59343a0884848aabe7ed29f0fd9dee297e9cc3"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_TYPE_INT16"><param name="Local" value="percipio__camport_8h.html#a3bd20f9ce80ffd1652a85be38ea59343a4a91ca710cbe3932254aaf7f802c2ec4"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_TYPE_INT32"><param name="Local" value="percipio__camport_8h.html#a3bd20f9ce80ffd1652a85be38ea59343ada8409f500e625ebee02bde82b589e80"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_TYPE_BOOL"><param name="Local" value="percipio__camport_8h.html#a3bd20f9ce80ffd1652a85be38ea59343a1ce653df9a7307d7c06fff65606299ad"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_TYPE_FLOAT"><param name="Local" value="percipio__camport_8h.html#a3bd20f9ce80ffd1652a85be38ea59343a46ba9cd3650b0cf1a851e2c77b217d41"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_TYPE_DOUBLE"><param name="Local" value="percipio__camport_8h.html#a3bd20f9ce80ffd1652a85be38ea59343ae64a175e95a89339aca57f260a1c6512"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_TYPE_STRING"><param name="Local" value="percipio__camport_8h.html#a3bd20f9ce80ffd1652a85be38ea59343a47010c78a4a69554f478df0f34e73b7d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_TYPE_STRUCT"><param name="Local" value="percipio__camport_8h.html#a3bd20f9ce80ffd1652a85be38ea59343a96d70de91b16f895bd5e3fdf7d6eaa3c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_TYPE_ENUM"><param name="Local" value="percipio__camport_8h.html#a3bd20f9ce80ffd1652a85be38ea59343adcb893d6092c25ba22b232342c77bc59"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PROP_TYPE_OTHER"><param name="Local" value="percipio__camport_8h.html#a3bd20f9ce80ffd1652a85be38ea59343a55c9217674f0a2ceabbd65c3cba8a536"><param name="ImageNumber" value="11"></OBJECT>
         </UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="ResolutionModes"><param name="Local" value="percipio__camport_8h.html#a8a63a6c771e1947d7a14653140ce0621"><param name="ImageNumber" value="1"></OBJECT>
         <UL>

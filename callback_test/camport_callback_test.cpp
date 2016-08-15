@@ -4,7 +4,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #ifdef _WIN32
-#include "stdafx.h"
 #include <time.h>
 #else
 #include <sys/time.h>
@@ -21,17 +20,11 @@ static int fps_counter = 0;
 static clock_t fps_tm = 0;
 
 
-void process_frames(percipio::DepthCameraDevice &port);
+void frames_show();
 void save_frame_to_file();
 int get_fps();
 void CopyBuffer(percipio::ImageBuffer *pbuf, cv::Mat &img);
-
-void frame_arrived_callback(void *user_data) {
-  // call port.FramePackageGet to update internal buffer
-  // call port.FrameGet to get frame data here
-  // To avoid performance problem ,time consuming task in callback function is not recommended.
-}
-
+void frame_arrived_callback(void *user_data) ;
 
 int main(int argc, char** argv) {
   percipio::DepthCameraDevice port(percipio::MODEL_DPB04GN);
@@ -40,7 +33,7 @@ int main(int argc, char** argv) {
   render.invalid_label = 0;
   render.Init();
   percipio::SetLogLevel(percipio::LOG_LEVEL_INFO);
-  port.SetCallbackUserData(NULL);
+  port.SetCallbackUserData(&port);//put device pointer into userdata for easy accessing
   port.SetFrameReadyCallback(frame_arrived_callback);
 
   int ver = percipio::LibVersion();
@@ -57,21 +50,17 @@ int main(int argc, char** argv) {
   printf("get property PROP_WAIT_NEXTFRAME_TIMEOUT %d\n", wait_time);
 
   int reti = port.SetProperty_Int(percipio::PROP_WORKMODE, percipio::WORKMODE_DEPTH);
-  //int reti = port.SetProperty_Int(percipio::PROP_WORKMODE, percipio::WORKMODE_IR);
-  //int reti = port.SetProperty_Int(percipio::PROP_WORKMODE, percipio::WORKMODE_IR_DEPTH);
   if (reti < 0) {
     printf("set mode failed,error code:%d\n", reti);
     return -1;
   }
 
   //display a empty window for receiving key input
-  cv::imshow("left", cv::Mat::zeros(100, 100, CV_8UC1));
+  cv::imshow("depth", cv::Mat::zeros(100, 100, CV_8UC1));
   fps_tm = clock();
   fps_counter = 0;
   while (true) {
-    if (port.FramePackageGet() == percipio::CAMSTATUS_SUCCESS) {
-      process_frames(port);
-    }
+    frames_show();
     int k = cv::waitKey(1);
     if (k == 'q' || k == 1048689) {
       break;
@@ -89,35 +78,56 @@ int main(int argc, char** argv) {
   return 0;
 }
 
-void process_frames(percipio::DepthCameraDevice &port) {
+void frames_show() {
   percipio::ImageBuffer pimage;
-  int ret = port.FrameGet(percipio::CAMDATA_LEFT, &pimage);
-  if (percipio::CAMSTATUS_SUCCESS == ret) {
-    CopyBuffer(&pimage, left);
+  if (!left.empty()) {
     cv::imshow("left", left);
   }
-  ret = port.FrameGet(percipio::CAMDATA_RIGHT, &pimage);
-  if (percipio::CAMSTATUS_SUCCESS == ret) {
-    CopyBuffer(&pimage, right);
+  if (!right.empty()) {
     cv::imshow("right", right);
   }
-  ret = port.FrameGet(percipio::CAMDATA_DEPTH, &pimage);
+  if (!depth.empty()) {
+    cv::Mat t;
+    render.Compute(depth, t);
+    cv::imshow("depth", t);
+  }
+}
+
+void frame_arrived_callback(void *user_data) {
+  // call port.FramePackageGet to update internal buffer
+  // call port.FrameGet to get frame data here
+  // To avoid performance problem ,time consuming task in callback function is not recommended.
+
+  percipio::DepthCameraDevice *device = (percipio::DepthCameraDevice *)user_data;
+  percipio::ImageBuffer pimage;
+  if (device->FramePackageGet() != percipio::CAMSTATUS_SUCCESS) {
+    return;
+  }
+  int ret = device->FrameGet(percipio::CAMDATA_LEFT, &pimage);
+  if (percipio::CAMSTATUS_SUCCESS == ret) {
+    CopyBuffer(&pimage, left);
+  }
+  ret = device->FrameGet(percipio::CAMDATA_RIGHT, &pimage);
+  if (percipio::CAMSTATUS_SUCCESS == ret) {
+    CopyBuffer(&pimage, right);
+  }
+  ret = device->FrameGet(percipio::CAMDATA_DEPTH, &pimage);
   if (percipio::CAMSTATUS_SUCCESS == ret) {
     CopyBuffer(&pimage, depth);
     cv::Mat t;
     int fps = get_fps();
-    render.Compute(depth, t);
-    cv::imshow("depth", t);
     if (fps > 0) {
       unsigned short v = depth.ptr<unsigned short>(depth.rows / 2)[depth.cols / 2];
       printf("fps:%d distance: %d\n", (int)fps, v);
     }
   }
-  ret = port.FrameGet(percipio::CAMDATA_POINT3D, &pimage);
+  ret = device->FrameGet(percipio::CAMDATA_POINT3D, &pimage);
   if (percipio::CAMSTATUS_SUCCESS == ret) {
     CopyBuffer(&pimage, point_cloud);
   }
 }
+
+
 #ifdef _WIN32
 int get_fps() {
   const int kMaxCounter = 20;

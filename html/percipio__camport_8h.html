@@ -18,7 +18,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Percipio Camport SDK
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.0.1</span>
    </div>
   </td>
  </tr>
@@ -47,8 +47,7 @@
 
 <p>depth camera interface  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
-<code>#include &lt;cassert&gt;</code><br />
+<div class="textblock"><code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 </div>
 <p><a href="percipio__camport_8h_source.html">Go to the source code of this file.</a></p>
@@ -63,6 +62,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpercipio_1_1CmosCtrlParam.html">percipio::CmosCtrlParam</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct for setting cmos parameter.  <a href="structpercipio_1_1CmosCtrlParam.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpercipio_1_1CamGainCtrlParam.html">percipio::CamGainCtrlParam</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct for setting Camera Auto Gain Control  <a href="structpercipio_1_1CamGainCtrlParam.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpercipio_1_1DeviceInfo.html">percipio::DeviceInfo</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct for device information  <a href="structpercipio_1_1DeviceInfo.html#details">More...</a><br /></td></tr>
@@ -97,11 +99,29 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>PERCIPIO_API</b>&#160;&#160;&#160;__attribute__ ((visibility (&quot;default&quot;)))</td></tr>
 <tr class="separator:abf17385bb7564f3f093dd21a38af668f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b42de79368c519ad91be64c969adfb7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b42de79368c519ad91be64c969adfb7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PERCIPIO_CAMPORT_LIB_BUILD_VERSION</b>&#160;&#160;&#160;2</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PERCIPIO_CAMPORT_LIB_BUILD_VERSION</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a8b42de79368c519ad91be64c969adfb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:aba7bc1797add20fe3efdf37ced1182c5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba7bc1797add20fe3efdf37ced1182c5"></a>
+typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>uint8_t</b></td></tr>
+<tr class="separator:aba7bc1797add20fe3efdf37ced1182c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a273cf69d639a59973b6019625df33e30"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a273cf69d639a59973b6019625df33e30"></a>
+typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>uint16_t</b></td></tr>
+<tr class="separator:a273cf69d639a59973b6019625df33e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a435d1572bf3f880d55459d9805097f62"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a435d1572bf3f880d55459d9805097f62"></a>
+typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>uint32_t</b></td></tr>
+<tr class="separator:a435d1572bf3f880d55459d9805097f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef44329758059c91c76d334e8fc09700"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aef44329758059c91c76d334e8fc09700"></a>
+typedef signed char&#160;</td><td class="memItemRight" valign="bottom"><b>int8_t</b></td></tr>
+<tr class="separator:aef44329758059c91c76d334e8fc09700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa343fa3b3d06292b959ffdd4c4703b06"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa343fa3b3d06292b959ffdd4c4703b06"></a>
+typedef short&#160;</td><td class="memItemRight" valign="bottom"><b>int16_t</b></td></tr>
+<tr class="separator:aa343fa3b3d06292b959ffdd4c4703b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32f2e37ee053cf2ce8ca28d1f74630e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32f2e37ee053cf2ce8ca28d1f74630e5"></a>
+typedef int&#160;</td><td class="memItemRight" valign="bottom"><b>int32_t</b></td></tr>
+<tr class="separator:a32f2e37ee053cf2ce8ca28d1f74630e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b59a415beff4118b2efc46fc2424c10"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b59a415beff4118b2efc46fc2424c10"></a>
 typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepercipio.html#a9b59a415beff4118b2efc46fc2424c10">percipio::EventCallbackFunc</a>) (void *user_data)</td></tr>
 <tr class="memdesc:a9b59a415beff4118b2efc46fc2424c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">callback function type <br /></td></tr>
@@ -154,10 +174,29 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespacepercipio.html#abf5a9eaf9a9b16e7c057c018e49e6662a1e8842194ace73bae9c5e23b7d200cbb">percipio::PROP_SPECKLE_FILTER</a>, 
 <br />
 &#160;&#160;<a class="el" href="namespacepercipio.html#abf5a9eaf9a9b16e7c057c018e49e6662addc5c148e1b72429e64ec658850b2a63">percipio::PROP_UNDISTORT_IR</a>, 
-<a class="el" href="namespacepercipio.html#abf5a9eaf9a9b16e7c057c018e49e6662ad5e22b738989287161ecd1a1a01e2017">percipio::PROP_COORDINATE_MAP</a>
+<a class="el" href="namespacepercipio.html#abf5a9eaf9a9b16e7c057c018e49e6662ad5e22b738989287161ecd1a1a01e2017">percipio::PROP_COORDINATE_MAP</a>, 
+<a class="el" href="namespacepercipio.html#abf5a9eaf9a9b16e7c057c018e49e6662a1414d1f43d2a91273f19984c673f228a">percipio::PROP_TRIGGER_MODE</a>, 
+<a class="el" href="namespacepercipio.html#abf5a9eaf9a9b16e7c057c018e49e6662adc2ced13371eb9fe96e8891febdee426">percipio::PROP_AUTO_GAIN_CTRL</a>
 <br />
  }</td></tr>
 <tr class="separator:abf5a9eaf9a9b16e7c057c018e49e6662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bd20f9ce80ffd1652a85be38ea59343"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepercipio.html#a3bd20f9ce80ffd1652a85be38ea59343">percipio::PropertyDataTypes</a> { <br />
+&#160;&#160;<b>PROP_TYPE_INT8</b>, 
+<b>PROP_TYPE_INT16</b>, 
+<b>PROP_TYPE_INT32</b>, 
+<b>PROP_TYPE_BOOL</b>, 
+<br />
+&#160;&#160;<b>PROP_TYPE_FLOAT</b>, 
+<b>PROP_TYPE_DOUBLE</b>, 
+<b>PROP_TYPE_STRING</b>, 
+<b>PROP_TYPE_STRUCT</b>, 
+<br />
+&#160;&#160;<b>PROP_TYPE_ENUM</b>, 
+<b>PROP_TYPE_OTHER</b>
+<br />
+ }</td></tr>
+<tr class="memdesc:a3bd20f9ce80ffd1652a85be38ea59343"><td class="mdescLeft">&#160;</td><td class="mdescRight">property types  <a href="namespacepercipio.html#a3bd20f9ce80ffd1652a85be38ea59343">More...</a><br /></td></tr>
+<tr class="separator:a3bd20f9ce80ffd1652a85be38ea59343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a63a6c771e1947d7a14653140ce0621"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepercipio.html#a8a63a6c771e1947d7a14653140ce0621">percipio::ResolutionModes</a> { <a class="el" href="namespacepercipio.html#a8a63a6c771e1947d7a14653140ce0621a71b1db7d2a4360eed4f6c475a8b64594">percipio::RESO_MODE_160x120</a> = 0x00, 
 <a class="el" href="namespacepercipio.html#a8a63a6c771e1947d7a14653140ce0621ab946e75924e6808a2ca6fa34511dd17c">percipio::RESO_MODE_320x240</a> = 0x01, 
 <a class="el" href="namespacepercipio.html#a8a63a6c771e1947d7a14653140ce0621aaf070d404d2069f15ce62057ee6868be">percipio::RESO_MODE_640x480</a> = 0x02, 
@@ -213,7 +252,7 @@ PERCIPIO_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 11 2016 11:10:12 for Percipio Camport SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 15 2016 16:44:00 for Percipio Camport SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

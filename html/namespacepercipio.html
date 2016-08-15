@@ -18,7 +18,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Percipio Camport SDK
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.0.1</span>
    </div>
   </td>
  </tr>
@@ -44,6 +44,9 @@
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpercipio_1_1CamGainCtrlParam.html">CamGainCtrlParam</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct for setting Camera Auto Gain Control  <a href="structpercipio_1_1CamGainCtrlParam.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpercipio_1_1CamIntristic.html">CamIntristic</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpercipio_1_1CmosCtrlParam.html">CmosCtrlParam</a></td></tr>
@@ -128,10 +131,29 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespacepercipio.html#abf5a9eaf9a9b16e7c057c018e49e6662a1e8842194ace73bae9c5e23b7d200cbb">PROP_SPECKLE_FILTER</a>, 
 <br />
 &#160;&#160;<a class="el" href="namespacepercipio.html#abf5a9eaf9a9b16e7c057c018e49e6662addc5c148e1b72429e64ec658850b2a63">PROP_UNDISTORT_IR</a>, 
-<a class="el" href="namespacepercipio.html#abf5a9eaf9a9b16e7c057c018e49e6662ad5e22b738989287161ecd1a1a01e2017">PROP_COORDINATE_MAP</a>
+<a class="el" href="namespacepercipio.html#abf5a9eaf9a9b16e7c057c018e49e6662ad5e22b738989287161ecd1a1a01e2017">PROP_COORDINATE_MAP</a>, 
+<a class="el" href="namespacepercipio.html#abf5a9eaf9a9b16e7c057c018e49e6662a1414d1f43d2a91273f19984c673f228a">PROP_TRIGGER_MODE</a>, 
+<a class="el" href="namespacepercipio.html#abf5a9eaf9a9b16e7c057c018e49e6662adc2ced13371eb9fe96e8891febdee426">PROP_AUTO_GAIN_CTRL</a>
 <br />
  }</td></tr>
 <tr class="separator:abf5a9eaf9a9b16e7c057c018e49e6662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bd20f9ce80ffd1652a85be38ea59343"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepercipio.html#a3bd20f9ce80ffd1652a85be38ea59343">PropertyDataTypes</a> { <br />
+&#160;&#160;<b>PROP_TYPE_INT8</b>, 
+<b>PROP_TYPE_INT16</b>, 
+<b>PROP_TYPE_INT32</b>, 
+<b>PROP_TYPE_BOOL</b>, 
+<br />
+&#160;&#160;<b>PROP_TYPE_FLOAT</b>, 
+<b>PROP_TYPE_DOUBLE</b>, 
+<b>PROP_TYPE_STRING</b>, 
+<b>PROP_TYPE_STRUCT</b>, 
+<br />
+&#160;&#160;<b>PROP_TYPE_ENUM</b>, 
+<b>PROP_TYPE_OTHER</b>
+<br />
+ }</td></tr>
+<tr class="memdesc:a3bd20f9ce80ffd1652a85be38ea59343"><td class="mdescLeft">&#160;</td><td class="mdescRight">property types  <a href="namespacepercipio.html#a3bd20f9ce80ffd1652a85be38ea59343">More...</a><br /></td></tr>
+<tr class="separator:a3bd20f9ce80ffd1652a85be38ea59343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a63a6c771e1947d7a14653140ce0621"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacepercipio.html#a8a63a6c771e1947d7a14653140ce0621">ResolutionModes</a> { <a class="el" href="namespacepercipio.html#a8a63a6c771e1947d7a14653140ce0621a71b1db7d2a4360eed4f6c475a8b64594">RESO_MODE_160x120</a> = 0x00, 
 <a class="el" href="namespacepercipio.html#a8a63a6c771e1947d7a14653140ce0621ab946e75924e6808a2ca6fa34511dd17c">RESO_MODE_320x240</a> = 0x01, 
 <a class="el" href="namespacepercipio.html#a8a63a6c771e1947d7a14653140ce0621aaf070d404d2069f15ce62057ee6868be">RESO_MODE_640x480</a> = 0x02, 
@@ -212,7 +234,7 @@ PERCIPIO_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00051">51</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
+<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00057">57</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
 
 </div>
 </div>
@@ -248,7 +270,7 @@ PERCIPIO_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00062">62</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
+<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00068">68</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
 
 </div>
 </div>
@@ -304,9 +326,15 @@ PERCIPIO_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <tr><td class="fieldname"><a class="anchor" id="abf5a9eaf9a9b16e7c057c018e49e6662ad5e22b738989287161ecd1a1a01e2017"></a>PROP_COORDINATE_MAP&#160;</td><td class="fielddoc">
 <p>get coordinate mapper </p>
 </td></tr>
+<tr><td class="fieldname"><a class="anchor" id="abf5a9eaf9a9b16e7c057c018e49e6662a1414d1f43d2a91273f19984c673f228a"></a>PROP_TRIGGER_MODE&#160;</td><td class="fielddoc">
+<p>trigger mode </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="abf5a9eaf9a9b16e7c057c018e49e6662adc2ced13371eb9fe96e8891febdee426"></a>PROP_AUTO_GAIN_CTRL&#160;</td><td class="fielddoc">
+<p>camera auto gain control </p>
+</td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00183">183</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
+<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00189">189</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
 
 </div>
 </div>
@@ -345,7 +373,7 @@ PERCIPIO_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00214">214</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
+<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00238">238</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
 
 </div>
 </div>
@@ -369,7 +397,7 @@ PERCIPIO_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00042">42</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
+<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00048">48</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
 
 </div>
 </div>
@@ -386,7 +414,23 @@ PERCIPIO_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>log levels for library. </p>
 <p>five levels to control how much logging information output from library, LOG_LEVEL_WARN will output most information and LOG_LEVEL_NONE will output none. </p>
 
-<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00230">230</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
+<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00254">254</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3bd20f9ce80ffd1652a85be38ea59343"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacepercipio.html#a3bd20f9ce80ffd1652a85be38ea59343">percipio::PropertyDataTypes</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>property types </p>
+
+<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00211">211</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
 
 </div>
 </div>
@@ -416,7 +460,7 @@ PERCIPIO_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00204">204</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
+<p>Definition at line <a class="el" href="percipio__camport_8h_source.html#l00228">228</a> of file <a class="el" href="percipio__camport_8h_source.html">percipio_camport.h</a>.</p>
 
 </div>
 </div>
@@ -449,7 +493,7 @@ PERCIPIO_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 11 2016 11:10:12 for Percipio Camport SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Aug 15 2016 16:44:00 for Percipio Camport SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

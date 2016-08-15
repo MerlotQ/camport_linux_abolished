@@ -1,35 +1,41 @@
-CURDIR := .
+TOPDIR  := $(shell pwd)
 
 CROSS_COMPILE	:= $(CROSS_COMPILE)
-CC  	:= $(CROSS_COMPILE)gcc
+CC 	:= $(CROSS_COMPILE)gcc
 
 SYS	:= $(shell $(CC) -dumpmachine)
 
 COMMON_CFLAGS := -g -O2 -Wall
 
 CFLAGS	:= $(COMMON_CFLAGS) -fPIC
-CFLAGS	+= -I$(CURDIR)/include
+CFLAGS	+= -I$(TOPDIR)/include
 
-LIB_CFLAGS := $(CFLAGS) $(COMMON_CFLAGS)
-LIB_CFLAGS += -shared -fPIC -fvisibility=hidden -fvisibility-inlines-hidden
+LDFLAGS := -lstdc++ -lpthread -ljpeg  -lusb-1.0 -lopencv_core -lm
+LDFLAGS	+= -lopencv_imgproc -lopencv_highgui -lopencv_contrib
 
-LIBS    += -lstdc++ -lpthread -ljpeg  -lusb-1.0 -lopencv_core -lm
-LIBS	+= -lopencv_imgproc -lopencv_highgui -lopencv_contrib
+LIBCAM	  := libcamm.so
 
+CAM_TEST  := camtest
+CB_TEST   := cbtest
+TRIG_TEST := trigtest
+
+CAMTEST_SRC := $(wildcard $(TOPDIR)/cam_test/*.cpp)
+CBTEST_SRC  := $(wildcard $(TOPDIR)/callback_test/*.cpp)
+TRIGTEST_SRC:= $(wildcard $(TOPDIR)/trigger_test/*.cpp)
+
+SOURCES := $(CAMTEST_SRC) $(CBTEST_SRC) $(TRIGTEST_SRC)
 OBJS	:= $(addsuffix .o , $(basename $(SOURCES)))
 
-TOPDIR  := $(shell pwd)
+all: $(CAM_TEST) $(CB_TEST) $(TRIG_TEST)
 
-LIBCAM	:= libcamm.so
-CAM_TEST := cam_test
+$(CAM_TEST): $(CAMTEST_SRC)
+	$(CC) $(CFLAGS) $(CAMTEST_SRC) -o $(CAM_TEST)  $(LDFLAGS) -L ./lib  -lcamm
 
-TEST_CFLAGS := $(COMMON_CFLAGS)  -I$(CURDIR)/include
-TEST_SRC := $(wildcard $(CURDIR)/*.cpp)
+$(CB_TEST): $(CBTEST_SRC)
+	$(CC) $(CFLAGS) $(CBTEST_SRC) -o $(CB_TEST)  $(LDFLAGS) -L ./lib  -lcamm
 
-all: $(CAM_TEST)
-
-$(CAM_TEST): $(TEST_SRC)
-	$(CC) $(TEST_CFLAGS) $(TEST_SRC) -o $(CAM_TEST)  $(LDFLAGS) $(LIBS) -L ./lib  -lcamm
+$(TRIG_TEST): $(TRIGTEST_SRC)
+	$(CC) $(CFLAGS) $(TRIGTEST_SRC) -o $(TRIG_TEST)  $(LDFLAGS) -L ./lib  -lcamm
 
 clean:
-	rm -rf $(OBJS) $(CAM_TEST)
+	rm -rf $(OBJS) $(CAM_TEST) $(CB_TEST) $(TRIG_TEST)
