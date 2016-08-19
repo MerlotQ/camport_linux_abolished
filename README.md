@@ -39,10 +39,10 @@ run the make command to start compiling,
 run sudo ./cam_test to show the xyz secret, enjoy it!
 
 
-<<<<<<< HEAD
+
 Bear in mind that you may want to CROSS COMPILE the libusb and opencv source code first and then cross compile this demo code for your embedded platform.
 =======
 Bear in mind that you may want to CROSS COMPILE the libusb and opencv source code first and then cross compile this demo code for your EMBEDDED platform.
 
 Please refer to http://bbs.percipio.xyz/viewforum.php?f=2 for more detais.
->>>>>>> 6f21c76dbb1432ce4bb40d021820d8c276325481
+
