@@ -13,6 +13,7 @@
 #define PERCIPIO_CAMPORT_H_
 #include <cassert>
 #include <fstream>
+#include <stdint.h>
 
 #ifdef _WIN32
 
@@ -29,13 +30,6 @@
 #endif
 
 #define PERCIPIO_CAMPORT_LIB_BUILD_VERSION 3
-
-typedef unsigned char           uint8_t;
-typedef unsigned short          uint16_t;
-typedef unsigned int            uint32_t;
-typedef signed char             int8_t;
-typedef short                   int16_t;
-typedef int                     int32_t;
 
 /**
  * @brief namespace used by sdk of percipio depth camera
