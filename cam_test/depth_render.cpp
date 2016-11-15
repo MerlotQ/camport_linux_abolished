@@ -105,7 +105,7 @@ void DepthRender::CalcColorMap(const cv::Mat &src, cv::Mat &dst) {
 
 void DepthRender::TruncValue(cv::Mat &img, cv::Mat &mask, short min_val, short max_val) {
   assert(max_val >= min_val);
-  assert(img.type() == CV_16SC1);
+  assert(img.type() == CV_16UC1);
   assert(mask.type() == CV_8UC1);
   short *ptr = img.ptr<short>();
   unsigned char *mask_ptr = mask.ptr<unsigned char>();

@@ -4,6 +4,7 @@
 #include <opencv2/core/core.hpp>
 #include <vector>
 
+//A Dpeth to RGB image converter
 class DepthRender {
  public:
   DepthRender() {

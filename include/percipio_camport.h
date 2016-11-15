@@ -29,7 +29,7 @@
 
 #endif
 
-#define PERCIPIO_CAMPORT_LIB_BUILD_VERSION 3
+#define PERCIPIO_CAMPORT_LIB_BUILD_VERSION 4
 
 /**
  * @brief namespace used by sdk of percipio depth camera
@@ -105,6 +105,8 @@ struct ImageBuffer {
   int width; /**< width of the image buffer*/
   int height;/**< height of the image buffer*/
   PixelTypes type; /**< pixel type */
+  uint32_t timestamp; /**< captured time since device start working*/
+  uint8_t frame_index; /**< frame index*/
   unsigned char *data; /**< pixel data buffer pointer*/
 
   ImageBuffer() {
@@ -197,6 +199,7 @@ enum DeviceProperties {
   PROP_COORDINATE_MAP,          /**< get coordinate mapper*/
   PROP_TRIGGER_MODE,            /**< trigger mode */
   PROP_AUTO_GAIN_CTRL,          /**< camera auto gain control*/
+  PROP_DEVICE_DESCRIPTOR,       /**< detail device information & calibration data in xml format*/
 };
 
 /** @brief property types 
@@ -371,10 +374,8 @@ class ICameraVideoSource {
   virtual int GetPropertyNum() = 0;
   virtual int GetDeviceList(int *devs) = 0;
   virtual int GetPropertyList(DeviceProperty *device_prop) = 0;
-  //trigger device to get a frame sync
-  virtual CameraSourceStatus FramePackageGetSync() = 0;
   //trigger device to get a frame async
-  virtual CameraSourceStatus FramePackageGetAsync() = 0;
+  virtual CameraSourceStatus TriggerOnce() = 0;
   virtual CameraSourceStatus FramePackageGet() = 0;
   virtual CameraSourceStatus FrameGet(int cam_data_type, ImageBuffer *buff1) = 0;
   virtual CameraSourceStatus OpenDevice(int id) = 0;
@@ -522,7 +523,8 @@ class DepthCameraDevice {
    * @see SetWaitNextFrameTimeout()
    */
   CameraSourceStatus FramePackageGetSync() {
-    return get_source()->FramePackageGetSync();
+    get_source()->TriggerOnce();
+    return get_source()->FramePackageGet();
   }
 
   /**
@@ -530,8 +532,8 @@ class DepthCameraDevice {
    *
    * call this method will trigger device to capture one frame package and return immediately.
    */
-  CameraSourceStatus FramePackageGetAsync() {
-    return get_source()->FramePackageGetAsync();
+  CameraSourceStatus TriggerOnce() {
+    return get_source()->TriggerOnce();
   }
 
   /**
