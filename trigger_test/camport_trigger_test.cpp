@@ -110,8 +110,8 @@ int init_device(percipio::DepthCameraDevice &port) {
 }
 
 void process_frames(void *p) {
-  auto &port = *(percipio::DepthCameraDevice *)p;
-  auto res = port.FramePackageGet();
+  percipio::DepthCameraDevice &port = *(percipio::DepthCameraDevice *)p;
+  int res = port.FramePackageGet();
   if (res != percipio::CAMSTATUS_SUCCESS) {
     return;
   }
@@ -128,7 +128,7 @@ void process_frames(void *p) {
   }
   ret = port.FrameGet(percipio::CAMDATA_DEPTH, &pimage);
   if (percipio::CAMSTATUS_SUCCESS == ret) {
-    auto c = pimage.timestamp;
+    int c = pimage.timestamp;
     int frame_index = pimage.frame_index;
     frame_total++;
     printf("%d arrived at \t%d \tindex = %d\n", frame_total, c, frame_index);
