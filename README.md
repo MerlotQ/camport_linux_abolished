@@ -2,7 +2,7 @@
 
 ----------
 
-This is a basic template for the users.
+This code supports DM46x depth camera only and is replaced by Camport2 with more easy used APIs, the new coming developer should not work with this code any more.
 
 This directory implements a samll opencv2.4.8 based application. It gets depth, 3D point cloud or IR-grey data from the PERCIPIO's depth camera and shows it in windows.
 
